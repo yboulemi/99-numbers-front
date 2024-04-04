@@ -6,12 +6,22 @@ export default defineI18nConfig(() => ({
             profile: {
                 title: "Profile",
                 description: "Personal details and stats.",
+                username: "Full name",
                 game_played: "Total number of games",
                 game_won: "Number of games won",
                 most_picked: "Most picked number",
                 win_percentage: "Win percentage",
                 no_game: "You haven't played any games yet.",
                 logout: "Logout",
+            },
+            login: {
+                alt_logo: "99 Numbers Logo",
+                title: "Sign in to your account",
+                email_label: "Email address",
+                password_label: "Password",
+                forgot_password: "Forgot password?",
+                not_member: "Not a member?",
+                sign_in: "Sign in",
             },
             layout: {
                 header: {
@@ -31,12 +41,22 @@ export default defineI18nConfig(() => ({
             profile: {
                 title: "Profile",
                 description: "Données personnelles et statistiques.",
+                username: "Nom complet",
                 game_played: "Nombre total de parties",
                 game_won: "Nombre total de parties gagnées",
                 most_picked: "Numéro le plus choisi",
                 win_percentage: "Pourcentage de victoire",
                 no_game: "Vous n'avez encore joué à aucun jeu.",
                 logout: "Déconnexion",
+            },
+            login: {
+                alt_logo: "99 Numbers Logo",
+                title: "Connectez-vous à votre compte",
+                email_label: "Adresse e-mail",
+                password_label: "Mot de passe",
+                forgot_password: "Mot de passe oublié?",
+                not_member: "Pas déjà membre?",
+                sign_in: "Se connecter",
             },
             layout: {
                 header: {
