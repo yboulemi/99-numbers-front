@@ -1,27 +1,36 @@
 <template>
-    <div>
-        <h1>Profile Page</h1>
-        <p>Welcome back, {{ userLogin }}</p>
-
-        <div v-if="stats.totalGames > 0">
-            <p>Total number of games: {{ stats.totalGames }}</p>
-            <p>Number of games won: {{ stats.gamesWon }}</p>
-            <p>Most picked number: {{ stats.mostPickedNumber }}</p>
-            <p>Win percentage: {{ stats.winPercentage.toFixed(2) }}%</p>
-        </div>
-        <div v-else>
-            <p>You haven't played any games yet.</p>
+    <section
+        class="flex flex-col justify-center min-h-full px-6 py-12 lg:px-8 grow"
+    >
+        <div class="px-4 text-center sm:px-0">
+            <h3 class="text-base font-semibold leading-7 text-gray-900">
+                Profile
+            </h3>
+            <p class="mt-1 text-sm leading-6 text-gray-500">
+                Personal details and stats.
+            </p>
         </div>
 
-        <button @click="handleLogout">Logout</button>
-    </div>
+        <ProfileStats :username="useLogin" :stats="stats" />
+
+        <div class="flex justify-center">
+            <button
+                type="button"
+                @click="handleLogout"
+                class="rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+            >
+                Logout
+            </button>
+        </div>
+    </section>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { useAuthStore } from "~/stores/auth";
-import { getUserPicks } from "~/api"; // Import the function
+import { getUserPicks } from "~/api";
+import ProfileStats from "~/components/molecules/ProfileStats.vue";
 
 const router = useRouter();
 const authStore = useAuthStore();
