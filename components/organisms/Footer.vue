@@ -1,6 +1,7 @@
 <template>
     <footer class="p-3 shadow-inner bg-slate-50">
-        <div class="flex justify-center">
+        <div class="flex justify-between">
+            <div />
             <ul class="flex gap-3">
                 <li>
                     <NavLink
@@ -21,10 +22,12 @@
                     />
                 </li>
             </ul>
+            <I18nDropdown />
         </div>
     </footer>
 </template>
 
 <script setup>
+import I18nDropdown from "~/components/atoms/i18nDropdown.vue";
 import NavLink from "~/components/atoms/NavLink.vue";
 </script>
