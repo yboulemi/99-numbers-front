@@ -30,6 +30,9 @@
                     :stat="`${stats.winPercentage} %`"
                 />
             </div>
+            <div v-else>
+                <p class="my-4 text-center">{{ $t("profile.no_game") }}</p>
+            </div>
         </dl>
     </div>
 </template>

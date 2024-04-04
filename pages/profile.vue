@@ -12,9 +12,6 @@
         </div>
 
         <ProfileStats :username="userLogin" :stats="stats" />
-        <div>
-            <p class="my-4 text-center">{{ $t("profile.no_game") }}</p>
-        </div>
 
         <div class="flex justify-center">
             <button
