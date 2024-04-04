@@ -1,5 +1,8 @@
 <template>
-    <NuxtLink :to="to" class="pb-2 hover:border-b-2 hover:border-cyan-400">
+    <NuxtLink
+        :to="to"
+        class="pb-2 text-indigo-600 hover:text-indigo-500 hover:border-b-2 hover:border-indigo-500"
+    >
         {{ text }}
     </NuxtLink>
 </template>
