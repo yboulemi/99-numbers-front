@@ -1,10 +1,10 @@
 <template>
     <div class="flex flex-col min-h-screen">
-        <Navbar />
+        <Header />
         <div class="flex flex-col grow">
             <NuxtPage class="grow" />
-            <Footer />
         </div>
+        <Footer />
     </div>
 </template>
 
@@ -12,7 +12,7 @@
 import { onMounted } from "vue";
 import { useAuthStore } from "~/stores/auth";
 import Footer from "~/components/organisms/Footer.vue";
-import Navbar from "~/components/molecules/Navbar.vue";
+import Header from "~/components/organisms/Header.vue";
 
 const authStore = useAuthStore();
 

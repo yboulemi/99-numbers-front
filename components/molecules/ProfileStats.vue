@@ -12,26 +12,23 @@
                 </dd>
             </div>
 
-            <div v-if="stats.totalGames > 0">
+            <div>
                 <ProfileStatsLine
-                    text="Total number of games"
+                    :text="$t('profile.game_played')"
                     :stat="stats.totalGames"
                 />
                 <ProfileStatsLine
-                    text="Number of games won"
+                    :text="$t('profile.game_won')"
                     :stat="stats.gamesWon"
                 />
                 <ProfileStatsLine
-                    text="Most picked number"
+                    :text="$t('profile.most_picked')"
                     :stat="stats.mostPickedNumber"
                 />
                 <ProfileStatsLine
-                    text="Win percentage"
+                    :text="$t('profile.win_percentage')"
                     :stat="`${stats.winPercentage} %`"
                 />
-            </div>
-            <div v-else>
-                <p class="mt-4">You haven't played any games yet.</p>
             </div>
         </dl>
     </div>

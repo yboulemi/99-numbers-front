@@ -8,18 +8,21 @@
                 <img
                     class="w-auto h-10 mx-auto"
                     src="/public/logo.png"
-                    alt="99 Numbers Logo"
+                    :alt="$t('layout.header.alt_logo')"
                 />
             </NuxtLink>
             <ul class="flex gap-3">
                 <li v-if="isAuthenticated">
-                    <NavLink text="Play !" to="/play" />
+                    <NavLink :text="$t('layout.header.play')" to="/play" />
                 </li>
                 <li v-if="!isAuthenticated">
-                    <NavLink text="Sign in !" to="/login" />
+                    <NavLink :text="$t('layout.header.sign_in')" to="/login" />
                 </li>
                 <li v-else>
-                    <NavLink text="Profile" to="/profile" />
+                    <NavLink
+                        :text="$t('layout.header.profile')"
+                        to="/profile"
+                    />
                 </li>
             </ul>
         </div>
