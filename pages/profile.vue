@@ -4,14 +4,21 @@
     >
         <div class="px-4 text-center sm:px-0">
             <h3 class="text-base font-semibold leading-7 text-gray-900">
-                Profile
+                {{ $t("profile.title") }}
             </h3>
             <p class="mt-1 text-sm leading-6 text-gray-500">
-                Personal details and stats.
+                {{ $t("profile.description") }}
             </p>
         </div>
 
-        <ProfileStats :username="useLogin" :stats="stats" />
+        <ProfileStats
+            v-if="stats.totalGames > 0"
+            :username="useLogin"
+            :stats="stats"
+        />
+        <div v-else>
+            <p class="mt-4">{{ $t("profile.no_game") }}</p>
+        </div>
 
         <div class="flex justify-center">
             <button
@@ -19,7 +26,7 @@
                 @click="handleLogout"
                 class="rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
             >
-                Logout
+                {{ $t("profile.logout") }}
             </button>
         </div>
     </section>
