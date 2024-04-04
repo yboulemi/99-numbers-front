@@ -13,6 +13,13 @@ export default defineI18nConfig(() => ({
                 no_game: "You haven't played any games yet.",
                 logout: "Logout",
             },
+            layout: {
+                footer: {
+                    privacy_policy: "Privacy policy",
+                    cookie_policy: "Cookie policy",
+                    terms_of_service: "Terms of service",
+                },
+            },
         },
         fr: {
             profile: {
@@ -24,6 +31,11 @@ export default defineI18nConfig(() => ({
                 win_percentage: "Pourcentage de victoire",
                 no_game: "Vous n'avez encore joué à aucun jeu.",
                 logout: "Déconnexion",
+            },
+            footer: {
+                privacy_policy: "Politique de confidentialité",
+                cookie_policy: "Politique en matière de cookies",
+                terms_of_service: "Conditions d'utilisation",
             },
         },
     },

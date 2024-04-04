@@ -3,14 +3,20 @@
         <div class="flex justify-center">
             <ul class="flex gap-3">
                 <li>
-                    <NavLink text="Privacy Policy" to="/legal/privacy-policy" />
-                </li>
-                <li>
-                    <NavLink text="Cookie Policy" to="/legal/cookie-policy" />
+                    <NavLink
+                        :text="$t('layout.footer.privacy_policy')"
+                        to="/legal/privacy-policy"
+                    />
                 </li>
                 <li>
                     <NavLink
-                        text="Terms of Service"
+                        :text="$t('layout.footer.cookie_policy')"
+                        to="/legal/cookie-policy"
+                    />
+                </li>
+                <li>
+                    <NavLink
+                        :text="$t('layout.footer.terms_of_service')"
                         to="/legal/terms-of-service"
                     />
                 </li>
