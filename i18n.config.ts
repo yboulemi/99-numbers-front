@@ -3,6 +3,10 @@ export default defineI18nConfig(() => ({
     locale: "en",
     messages: {
         en: {
+            play: {
+                title: "Welcome! Please pick a number between 1 and 99.",
+                pick: "Submit Pick",
+            },
             profile: {
                 title: "Profile",
                 description: "Personal details and stats.",
@@ -38,8 +42,12 @@ export default defineI18nConfig(() => ({
             },
         },
         fr: {
+            play: {
+                title: "Bienvenue ! Veuillez choisir un nombre entre 1 et 99.",
+                pick: "Soumettre le choix",
+            },
             profile: {
-                title: "Profile",
+                title: "Profil",
                 description: "Données personnelles et statistiques.",
                 username: "Nom complet",
                 game_played: "Nombre total de parties",
@@ -63,7 +71,7 @@ export default defineI18nConfig(() => ({
                     alt_logo: "99 Numbers Logo",
                     play: "Jouer !",
                     sign_in: "Se connecter !",
-                    profile: "Profile",
+                    profile: "Profil",
                 },
                 footer: {
                     privacy_policy: "Politique de confidentialité",
