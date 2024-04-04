@@ -19,7 +19,7 @@
                 />
                 <ProfileStatsLine
                     text="Number of games won"
-                    :stat="stats.totalGames"
+                    :stat="stats.gamesWon"
                 />
                 <ProfileStatsLine
                     text="Most picked number"
