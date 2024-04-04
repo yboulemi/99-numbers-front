@@ -14,6 +14,12 @@ export default defineI18nConfig(() => ({
                 logout: "Logout",
             },
             layout: {
+                header: {
+                    alt_logo: "99 Numbers Logo",
+                    play: "Play !",
+                    sign_in: "Sign in !",
+                    profile: "Profile",
+                },
                 footer: {
                     privacy_policy: "Privacy policy",
                     cookie_policy: "Cookie policy",
@@ -32,10 +38,18 @@ export default defineI18nConfig(() => ({
                 no_game: "Vous n'avez encore joué à aucun jeu.",
                 logout: "Déconnexion",
             },
-            footer: {
-                privacy_policy: "Politique de confidentialité",
-                cookie_policy: "Politique en matière de cookies",
-                terms_of_service: "Conditions d'utilisation",
+            layout: {
+                header: {
+                    alt_logo: "99 Numbers Logo",
+                    play: "Jouer !",
+                    sign_in: "Se connecter !",
+                    profile: "Profile",
+                },
+                footer: {
+                    privacy_policy: "Politique de confidentialité",
+                    cookie_policy: "Politique en matière de cookies",
+                    terms_of_service: "Conditions d'utilisation",
+                },
             },
         },
     },
