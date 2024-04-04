@@ -11,77 +11,8 @@
             </p>
         </div>
 
-        <div class="flex justify-center mt-6">
-            <dl class="divide-y divide-gray-100 max-w-94">
-                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt class="text-sm font-medium leading-6 text-gray-900">
-                        Full name
-                    </dt>
-                    <dd
-                        class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 text-end"
-                    >
-                        {{ userLogin }}
-                    </dd>
-                </div>
+        <ProfileStats :username="useLogin" :stats="stats" />
 
-                <div v-if="stats.totalGames > 0">
-                    <div
-                        class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0"
-                    >
-                        <dt class="text-sm font-medium leading-6 text-gray-900">
-                            Total number of games
-                        </dt>
-                        <dd
-                            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 text-end"
-                        >
-                            {{ stats.totalGames }}
-                        </dd>
-                    </div>
-
-                    <div
-                        class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0"
-                    >
-                        <dt class="text-sm font-medium leading-6 text-gray-900">
-                            Number of games won
-                        </dt>
-                        <dd
-                            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 text-end"
-                        >
-                            {{ stats.gamesWon }}
-                        </dd>
-                    </div>
-
-                    <div
-                        class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0"
-                    >
-                        <dt class="text-sm font-medium leading-6 text-gray-900">
-                            Most picked number
-                        </dt>
-                        <dd
-                            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 text-end"
-                        >
-                            {{ stats.mostPickedNumber }}
-                        </dd>
-                    </div>
-
-                    <div
-                        class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0"
-                    >
-                        <dt class="text-sm font-medium leading-6 text-gray-900">
-                            Win percentage
-                        </dt>
-                        <dd
-                            class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 text-end"
-                        >
-                            {{ stats.winPercentage }} %
-                        </dd>
-                    </div>
-                </div>
-                <div v-else>
-                    <p class="mt-4">You haven't played any games yet.</p>
-                </div>
-            </dl>
-        </div>
         <div class="flex justify-center">
             <button
                 type="button"
@@ -98,7 +29,8 @@
 import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { useAuthStore } from "~/stores/auth";
-import { getUserPicks } from "~/api"; // Import the function
+import { getUserPicks } from "~/api";
+import ProfileStats from "~/components/molecules/ProfileStats.vue";
 
 const router = useRouter();
 const authStore = useAuthStore();
