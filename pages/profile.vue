@@ -11,13 +11,9 @@
             </p>
         </div>
 
-        <ProfileStats
-            v-if="stats.totalGames > 0"
-            :username="useLogin"
-            :stats="stats"
-        />
-        <div v-else>
-            <p class="mt-4">{{ $t("profile.no_game") }}</p>
+        <ProfileStats :username="userLogin" :stats="stats" />
+        <div>
+            <p class="my-4 text-center">{{ $t("profile.no_game") }}</p>
         </div>
 
         <div class="flex justify-center">
@@ -38,6 +34,10 @@ import { useRouter } from "vue-router";
 import { useAuthStore } from "~/stores/auth";
 import { getUserPicks } from "~/api";
 import ProfileStats from "~/components/molecules/ProfileStats.vue";
+
+definePageMeta({
+    middleware: ["auth"],
+});
 
 const router = useRouter();
 const authStore = useAuthStore();

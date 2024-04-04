@@ -12,7 +12,7 @@
                 </dd>
             </div>
 
-            <div>
+            <div v-if="stats.totalGames > 0">
                 <ProfileStatsLine
                     :text="$t('profile.game_played')"
                     :stat="stats.totalGames"
@@ -39,5 +39,6 @@ import ProfileStatsLine from "~/components/atoms/ProfileStatsLine.vue";
 
 const props = defineProps({
     stats: Object,
+    username: String,
 });
 </script>
