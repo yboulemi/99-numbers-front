@@ -1,28 +1,32 @@
 <template>
     <div>
-        <div>
-            <p>Welcome! Please pick a number between 1 and 99.</p>
-            <form @submit.prevent="submitPick">
-                <input v-model.number="pick" type="number" min="1" max="99" required>
-                <button type="submit">Submit Pick</button>
-            </form>
-        </div>
+        <p>Welcome! Please pick a number between 1 and 99.</p>
+        <form @submit.prevent="submitPick">
+            <input
+                v-model.number="pick"
+                type="number"
+                min="1"
+                max="99"
+                required
+            />
+            <button type="submit">Submit Pick</button>
+        </form>
     </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { createPick } from '../api'; 
+import { ref } from "vue";
+import { createPick } from "../api";
 
 definePageMeta({
-  middleware: ['auth']
+    middleware: ["auth"],
 });
 
-const pick = ref('');
+const pick = ref("");
 
 const submitPick = () => {
     const numberPicked = createPick(pick.value);
-    console.log('Submitted pick:', pick.value);
+    console.log("Submitted pick:", pick.value);
     return numberPicked;
 };
 </script>
