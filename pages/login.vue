@@ -1,50 +1,32 @@
 <template>
-    <div>
-        <!-- Login Form -->
-        <form @submit.prevent="handleLogin">
-            <div>
-                <label for="email">Email:</label>
-                <input id="email" v-model="email" type="email" required />
-            </div>
-            <div>
-                <label for="password">Password:</label>
-                <input
-                    id="password"
-                    v-model="password"
-                    type="password"
-                    required
-                />
-            </div>
-            <button type="submit">Login</button>
-        </form>
+    <div class="flex flex-col justify-center min-h-full px-6 py-12 lg:px-8">
+        <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+            <img
+                class="w-auto h-32 mx-auto"
+                src="/public/logo.png"
+                alt="99 Numbers Logo"
+            />
+            <h2
+                class="mt-10 text-2xl font-bold leading-9 tracking-tight text-center text-gray-900"
+            >
+                Sign in to your account
+            </h2>
+        </div>
+
+        <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+            <LoginForm />
+            <p class="mt-10 text-sm text-center text-gray-500">
+                Not a member?
+                <a
+                    href="#"
+                    class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+                    >Sign in
+                </a>
+            </p>
+        </div>
     </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
-import { useAuthStore } from "~/stores/auth";
-import { login as apiLogin } from "~/api";
-
-const email = ref("");
-const password = ref("");
-const router = useRouter();
-
-const handleLogin = async () => {
-    try {
-        const apiReply = await apiLogin(email.value, password.value);
-
-        if (process.client) {
-            localStorage.setItem("authToken", apiReply.data.token);
-            localStorage.setItem("authUsername", apiReply.data.login);
-            localStorage.setItem("userId", apiReply.data.userId.toString());
-        }
-
-        useAuthStore().setAuth(apiReply.data.token, apiReply.data.login);
-
-        router.push("/play");
-    } catch (error) {
-        console.error("Login failed", error);
-    }
-};
+import LoginForm from "~/components/organisms/LoginForm.vue";
 </script>
