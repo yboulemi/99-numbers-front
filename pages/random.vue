@@ -1,17 +1,10 @@
 <template>
-    <!-- <div>
-      <h1>Random Games Generator</h1>
-      <form @submit.prevent="generateChartData">
-        <label for="numGames">Number of games:</label>
-        <input type="number" id="numGames" v-model="numGames" min="1" max="10000" required>
-        <button type="submit">Generate</button>
-      </form>
-  
-      <canvas ref="randomGamesChart"></canvas>
-    </div> -->
+    <BarChart />
 </template>
 
 <script setup>
+import BarChart from "~/components/molecules/BarChart.vue";
+
 //   import { ref } from 'vue';
 //   import Chart from 'chart.js/auto';
 
@@ -77,13 +70,3 @@
 //     initOrUpdateChart(chartData);
 //   }
 </script>
-
-<style scoped>
-/* form {
-    margin-bottom: 20px;
-  }
-  
-  form label, form input, form button {
-    margin: 5px;
-  } */
-</style>
