@@ -102,3 +102,13 @@ export async function getUserPicks() {
     const data = await apiRequest(`/pick/user/${userId}`, 'GET');
     return data;
 }
+
+export async function getPicksFromLatestRoundForUser() {
+    const userId = localStorage.getItem('userId');
+    if (!userId || !localStorage.getItem('authToken')) {
+        throw new Error('User is not logged in');
+    }
+
+    const data = await apiRequest(`/pick/user/${userId}/latest-round`, 'GET');
+    return data;
+}
