@@ -81,7 +81,11 @@ const handleLogin = async () => {
             localStorage.setItem("userId", apiReply.data.userId.toString());
         }
 
-        useAuthStore().setAuth(apiReply.data.token, apiReply.data.login);
+        useAuthStore().setAuth(
+            apiReply.data.token,
+            apiReply.data.login,
+            apiReply.data.userId.toString(),
+        );
 
         router.push("/play");
     } catch (error) {

@@ -6,6 +6,12 @@ export default defineI18nConfig(() => ({
             play: {
                 title: "Welcome! Please pick a number between 1 and 99.",
                 pick: "Submit Pick",
+                stats: "Wéééé the stats",
+                legend: {
+                    red: "Number picked by more than one player",
+                    green: "Number picked was picked by only one player",
+                    white: "Number was not picked by any player",
+                },
             },
             profile: {
                 title: "Profile",
@@ -45,6 +51,12 @@ export default defineI18nConfig(() => ({
             play: {
                 title: "Bienvenue ! Veuillez choisir un nombre entre 1 et 99.",
                 pick: "Soumettre le choix",
+                stats: "Wéééé les stats",
+                legend: {
+                    red: "Nombre choisi par plus d'un joueur",
+                    green: "Nombre choisi par un seul joueur",
+                    white: "Nombre non choisi par aucun joueur",
+                },
             },
             profile: {
                 title: "Profil",

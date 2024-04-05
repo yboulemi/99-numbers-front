@@ -1,7 +1,5 @@
 <template>
-    <section
-        class="flex flex-col justify-center min-h-full px-6 py-12 lg:px-8 grow"
-    >
+    <section class="justify-center min-h-full px-6 py-12 lg:px-8">
         <div class="px-4 text-center sm:px-0">
             <h3 class="text-base font-semibold leading-7 text-gray-900">
                 {{ $t("profile.title") }}

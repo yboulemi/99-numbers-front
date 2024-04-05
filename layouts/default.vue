@@ -1,9 +1,7 @@
 <template>
     <div class="flex flex-col min-h-screen">
         <Header />
-        <div class="flex flex-col grow">
-            <NuxtPage class="grow" />
-        </div>
+        <NuxtPage class="flex flex-col grow" />
         <Footer />
     </div>
 </template>
