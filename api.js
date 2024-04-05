@@ -117,22 +117,21 @@ export async function getUserPicks() {
 }
 
 export async function getPicksFromLatestRoundForUser() {
-    const userId = localStorage.getItem('userId');
-    if (!userId || !localStorage.getItem('authToken')) {
-        throw new Error('User is not logged in');
+    const userId = localStorage.getItem("userId");
+    if (!userId || !localStorage.getItem("authToken")) {
+        throw new Error("User is not logged in");
     }
 
-    const data = await apiRequest(`/pick/user/${userId}/latest-round`, 'GET');
+    const data = await apiRequest(`/pick/user/${userId}/latest-round`, "GET");
     return data;
 }
 
 export async function checkUserHasPlayedToday() {
-    const userId = localStorage.getItem('userId');
-    if (!userId || !localStorage.getItem('authToken')) {
-        throw new Error('User is not logged in');
+    const userId = localStorage.getItem("userId");
+    if (!userId || !localStorage.getItem("authToken")) {
+        throw new Error("User is not logged in");
     }
 
-    const data = await apiRequest(`/user/${userId}/has-played-today`, 'GET');
-    return data;
+    const data = await apiRequest(`/user/${userId}/has-played-today`, "GET");
+    return data.hasPlayedToday;
 }
-
